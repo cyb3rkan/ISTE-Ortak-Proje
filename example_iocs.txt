@@ -1,0 +1,24 @@
+# Example IOCs for testing
+# Lines starting with # are ignored
+# Documentation values only: RFC 5737 / RFC 3849 addresses, example.com
+# names and the EICAR test-file hash — none of them is a real indicator.
+# Running this file still sends every value to each configured provider.
+
+# IP Addresses
+203.0.113.7
+198.51.100.23
+2001:db8::1
+
+# Domains
+malicious.example.com
+phishing.example.net
+
+# File Hashes (MD5 of the EICAR test file)
+44d88612fea8a8f36de82e1278abb02f
+
+# URLs
+http://malicious.example.com/payload.exe
+hxxps://phishing[.]example[.]net/login
+
+# E-mail
+phisher@malicious.example.com

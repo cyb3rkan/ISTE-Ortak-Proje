@@ -1,0 +1,236 @@
+{
+  "report_id": "7f3cca94-f7b9-489e-8290-472b68ff191f",
+  "format": "json",
+  "created_at": "2026-10-30T17:28:44.079107+00:00",
+  "metadata": {
+    "request_id": "ee13324755e549c58de99b33fb1af5c1",
+    "ioc_type": "ipv4"
+  },
+  "schema": 2,
+  "content": {
+    "ioc": "8.8.8.8",
+    "ioc_type": "ipv4",
+    "risk": {
+      "score": 0,
+      "level": "LOW",
+      "reasons": [
+        "VirusTotal: 0/92 engines flagged as malicious."
+      ],
+      "detection_confidence": 0.05,
+      "active_data_points": null,
+      "breakdown": {
+        "virustotal": 0.0,
+        "abuseipdb": 0.0,
+        "shodan": 0.0,
+        "otx": 0.0,
+        "greynoise": 0.0,
+        "zerobounce": 0.0
+      },
+      "evidence_strength": "none",
+      "is_known_test_file": false,
+      "test_file_family": null,
+      "operational_risk_note": null,
+      "vt_detection_ratio": 0.0,
+      "url_pattern_signals": null,
+      "suspicious_categories": null,
+      "applied_floors": null,
+      "calibration_note": null,
+      "score_adjustments": null,
+      "evidence_status": "partial",
+      "provider_coverage": {
+        "queried": 5,
+        "responded": 4,
+        "failed": 1,
+        "not_found": 0
+      },
+      "unavailable_providers": [
+        "GreyNoise"
+      ]
+    },
+    "providers": [
+      {
+        "name": "GreyNoise",
+        "status": "error",
+        "data_summary": {},
+        "error": "HTTP 401",
+        "response_time_ms": 1906.0
+      },
+      {
+        "name": "Shodan",
+        "status": "success",
+        "data_summary": {
+          "last_update": "2026-10-30T14:12:44.164977",
+          "isp": "Google LLC",
+          "hostnames": [
+            "jadbsi.com",
+            "dns.google"
+          ],
+          "org": "Google LLC",
+          "country_name": "United States",
+          "country_code": "US",
+          "os": null,
+          "ports": [
+            53,
+            443
+          ],
+          "tags": [
+            "pqc"
+          ],
+          "asn": "AS15169",
+          "vulns_count": 0
+        },
+        "error": null,
+        "response_time_ms": 1922.0
+      },
+      {
+        "name": "AbuseIPDB",
+        "status": "success",
+        "data_summary": {
+          "is_whitelisted": true,
+          "total_reports": 232,
+          "is_public": true,
+          "isp": "Google LLC",
+          "domain": "google.com",
+          "last_reported_at": "2026-10-29T20:12:57+00:00",
+          "categories": [
+            2,
+            7,
+            9,
+            10,
+            14,
+            15,
+            16,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "usage_type": "Content Delivery Network",
+          "country_code": "US",
+          "num_distinct_users": 88,
+          "abuse_confidence_score": 0
+        },
+        "error": null,
+        "response_time_ms": 2109.0
+      },
+      {
+        "name": "VirusTotal",
+        "status": "success",
+        "data_summary": {
+          "total_engines": 92,
+          "harmless_count": 53,
+          "title": null,
+          "undetected_count": 39,
+          "last_analysis_date": 1793375504,
+          "tags": [
+            "suspicious-udp"
+          ],
+          "as_owner": "Google LLC",
+          "country": "US",
+          "malicious_count": 0,
+          "status": null,
+          "content_type": null,
+          "no_result_engines": 0,
+          "suspicious_count": 0,
+          "categories": {},
+          "asn": 15169,
+          "reputation": 564
+        },
+        "error": null,
+        "response_time_ms": 2328.0
+      },
+      {
+        "name": "AlienVault OTX",
+        "status": "success",
+        "data_summary": {
+          "country_code": "US",
+          "pulse_count": 0,
+          "reputation": 0
+        },
+        "error": null,
+        "response_time_ms": 2703.0
+      }
+    ],
+    "mitre": [
+      {
+        "tactic": "Reconnaissance",
+        "technique_id": "T1595",
+        "technique_name": "Active Scanning",
+        "description": "The IP has been observed or reported conducting internet scanning activity.",
+        "basis": "reported",
+        "evidence": "AbuseIPDB report category: Port Scan (14)."
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1110",
+        "technique_name": "Brute Force",
+        "description": "IP reported for brute-force / credential-guessing attempts.",
+        "basis": "reported",
+        "evidence": "AbuseIPDB report category: Brute-Force (18)."
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exposed services with known CVEs increase the risk of exploitation.",
+        "basis": "reported",
+        "evidence": "AbuseIPDB report category: Web App Attack (21)."
+      }
+    ],
+    "ai_analysis": {
+      "summary": "AI analizi kullanılamadı. Deterministic skor: 0/100 (LOW).",
+      "key_findings": [
+        "Deterministic skor 0/100 (LOW); kanıt gücü: yok; detection confidence %5.",
+        "4/5 provider kullanılabilir sonuç döndürdü. Yanıt vermeyen: GreyNoise — provider hataları skoru etkilemez."
+      ],
+      "recommendations": [
+        "Firewall, proxy ve EDR loglarında bu IP ile kurulan bağlantıları (yön, port, zaman aralığı) inceleyin.",
+        "Mevcut kanıt engelleme için yeterli değil; IOC'yi izleme listesinde tutun ve yeni istihbarat geldiğinde yeniden değerlendirin.",
+        "Yanıt vermeyen provider'lar (GreyNoise) için sorguyu daha sonra tekrarlayın."
+      ],
+      "analyst_note": "AI layer şu anda kapalı veya erişilemiyor. Provider verilerini manuel olarak inceleyin.",
+      "detection_confidence": 0.05,
+      "ai_confidence": 0.0,
+      "requires_human_review": false,
+      "why_malicious": [],
+      "why_benign": [
+        "Alternatif açıklama üretmek için AI analizi mevcut değil."
+      ],
+      "weak_signals": [
+        {
+          "message": "Yanıt vermeyen provider'lar: GreyNoise. Değerlendirme kısmi veriye dayanıyor.",
+          "type": "weak_evidence"
+        }
+      ],
+      "prioritized_recommendations": [
+        {
+          "action": "Firewall, proxy ve EDR loglarında bu IP ile kurulan bağlantıları (yön, port, zaman aralığı) inceleyin.",
+          "priority": "medium",
+          "rationale": "Deterministic scoring provider itibarını ölçer; kurum içinde gerçek bir etkileşim olup olmadığını yalnızca yerel telemetri gösterir."
+        },
+        {
+          "action": "Mevcut kanıt engelleme için yeterli değil; IOC'yi izleme listesinde tutun ve yeni istihbarat geldiğinde yeniden değerlendirin.",
+          "priority": "low",
+          "rationale": "Deterministic scoring yalnızca zayıf veya tek kaynaklı sinyal buldu."
+        },
+        {
+          "action": "Yanıt vermeyen provider'lar (GreyNoise) için sorguyu daha sonra tekrarlayın.",
+          "priority": "low",
+          "rationale": "Provider hataları deterministic scoring'e puan eklemez veya çıkarmaz; yalnızca kanıt kapsamını daraltır."
+        }
+      ],
+      "tags": [],
+      "confidence": 0.0,
+      "audit_trail": null,
+      "source": "deterministic"
+    },
+    "meta": {
+      "from_cache": true,
+      "execution_time_ms": 6407.0,
+      "timestamp": "2026-10-30T17:28:44.074573",
+      "request_id": "ee13324755e549c58de99b33fb1af5c1"
+    },
+    "report_id": null
+  }
+}

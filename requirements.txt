@@ -1,0 +1,6 @@
+# ============================================================
+#  IOC Enricher Agent — Python dependencies
+# ============================================================
+# The same hash-pinned lock as ../requirements.txt (see that file for the
+# layout and how the locks are generated from pyproject.toml).
+-r ../requirements/test.txt
